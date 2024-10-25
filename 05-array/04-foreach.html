@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const names = ['Alice', 'Bella', 'Cathy']
+
+    // 일반 함수 표기
+    names.forEach(function (name) {
+      console.log(name)
+    })
+
+    // 화살표 함수 표기
+    names.forEach((name) => {
+      console.log(name)
+    })
+
+    // 활용
+    names.forEach((name, index, array) => {
+      console.log(name, index, array)
+    })
+
+    names.forEach((name, index) => {
+      console.log(index) // index만 출력하고 싶더라도 첫번째인자 name은 같이 받아와야함
+    })
+
+
+  </script>
+</body>
+
+</html>

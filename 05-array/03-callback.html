@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1
+    const numbers1 = [1, 2, 3]
+    numbers1.forEach(function(number) {
+    // forEach는 numbers라는 배열을 반복하면서 1, 2, 3 에 이 함수 functions() 를 적용시키는 거다.
+    // 즉, function() 이 위의 코드 square의 역할인거다.
+    // numbers 배열 요소하나하나를 콜백함수에 인자로 넘겨준다. 파이썬이랑 방향성이 반대다. ⭐
+      console.log(number) // 3번 호출됨
+  
+  
+  })
+
+
+    // 2 위 코드랑 동일
+    // 콜백함수를 바깥쪽에 만들고 이름만 넣어주면 됨
+    const numbers2 = [1, 2, 3]
+    const callBackFunc = function (number) {
+      console.log(number)
+    }
+    numbers.forEach(callBackFunc)
+
+  </script>
+</body>
+
+</html>
