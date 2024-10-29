@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button id="btn">버튼</button>
+
+    <script>
+      // 1. 버튼 선택 (어디에 붙일지를 선택해야함)
+      const btn = document.querySelector("#btn");
+
+      // 2. 콜백 함수
+      const detectClick = function (event) {
+        console.log(event);
+        // 이 3개가 반드시 항상 동일하지는 않다.
+        // currentTarget 이 this이고
+        // target은 상황에 따라 변경될 수도 있다.
+        console.log(event.currentTarget);
+        console.log(event.target);
+        console.log(this);
+      };
+
+      // 3. 버튼에 이벤트 핸들러를 부착
+      btn.addEventListener("click", detectClick);
+      // EventListener 의 동작 방식에 좀더 집중하자.
+    </script>
+  </body>
+</html>

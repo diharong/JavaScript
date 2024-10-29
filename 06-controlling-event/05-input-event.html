@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- 데이터는 input 태그 안에서 채워지고 있다. -> 결국 input태그 선택 
+   -> 밑에 event 객체가 발생할 4번의 inputTag를 선택해야한다.
+   어떻게 해야할까 ?!
+   방법이 2가지가 있음
+    1. console.log(event.currentTarget) 이벤트 객체가 부착된 대상 : current
+    2. console.log(this)-->
+    <input type="text" id="text-input" />
+
+    <p></p>
+
+    <script>
+      // 1. input 요소를 선택하기 (이벤트가 발생하는 지점)
+      const inputTag = document.querySelector("#text-input");
+      // 2. p 요소 선택
+      const pTag = document.querySelector("p");
+      //3. 콜백 함수 (input 요소에 input 이벤트가 발생할 때 마다 실행될 코드 )
+      const inputHandler = function (event) {
+        // 3.1 이벤트 객체에서 사용자가 입력한 값을 찾아 저장
+        // console.log(event);
+        // console.log(event.currentTarget);
+        // console.log(this);
+        console.log(event.currentTarget.value);
+        // const inputData = this.value 로 해도 동일하다 근데 this는 주의해야한다.
+        // this는 이 함수가 일반함수로 호출되느냐 화살표함수로 호출되느냐에 따라 다르다. 100프로 동일하진 않음
+        const inputData = event.currentTarget.value;
+
+        // 3.2 선택한 p요소의 텍스트 콘텐츠에 할당
+        pTag.textContent = inputData;
+      };
+      //4. 선택한 input 요소에 이벤트 핸들러를 부착
+      inputTag.addEventListener("input", inputHandler);
+    </script>
+  </body>
+</html>
